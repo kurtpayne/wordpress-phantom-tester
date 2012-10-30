@@ -37,6 +37,9 @@ var Config = {
 		}
 	],
 	
+	// How many measurments to take
+	measurements      : 5,
+	
 	// Which URLs to visit.  Include [base_url]/index.php as the first part of the URL
 	// to have the main loop replace it with Config.base_url above
 	// If the URL requires a logged in user, just pass in a role and
@@ -245,7 +248,8 @@ var Config = {
 		},
 		//*/
 
-		//*
+		// Removed in 3.5
+		/*
 		{
 			"url"  : "[base_url]/wp-admin/options-privacy.php",
 			"role" : "administrator"
@@ -294,44 +298,46 @@ var Config = {
 		},
 		//*/
 
+
+
 		/** Phantom doesn't like these ... flash? **/
 
-		/*
+		//*
 		{
 			"url"  : "[base_url]/wp-admin/edit.php",
 			"role" : "administrator"
 		},
 		//*/
 		
-		/*
+		//*
 		{
 			"url"  : "[base_url]/wp-admin/edit.php?post_type=page",
 			"role" : "administrator"
 		},
 		//*/
 
-		/*
+		//*
 		{
 			"url"  : "[base_url]/wp-admin/post-new.php?post_type=page",
 			"role" : "administrator"
 		},
 		//*/
 
-		/*
+		//*
 		{
 			"url"  : "[base_url]/wp-admin/upload.php",
 			"role" : "administrator"
 		},
 		//*/
 
-		/*
+		//*
 		{
 			"url"  : "[base_url]/wp-admin/media-new.php",
 			"role" : "administrator"
 		},
 		//*/
 		
-		/*
+		//*
 		{
 			"url"  : "[base_url]/wp-admin/post-new.php",
 			"role" : "administrator"
