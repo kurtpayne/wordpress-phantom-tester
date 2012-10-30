@@ -130,7 +130,7 @@ var PageMetrics = function( o ) {
 
 			// Screenshot
 			if ( "success" === status ) {
-				if (Config.save_screenshots) {
+				if ( Config.save_screenshots && !fs.exists( CryptoJS.SHA1( that.url ) ) ) {
 					logger.debug( "[SCREENSHOT] Saving screenshot for " + that.url + " to " + Config.screenshots_dir + "/" + CryptoJS.SHA1( that.url ) + ".png" );
 					that.page.render( Config.screenshots_dir + "/" +  CryptoJS.SHA1( that.url ) + ".png" );
 				}

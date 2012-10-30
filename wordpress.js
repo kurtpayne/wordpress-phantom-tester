@@ -41,14 +41,19 @@ window.setInterval( function() {
 var i       = 0
     metrics = [];
 for ( i = 0 ; i < Config.urls.length ; i++ ) {
+	
 
-		// Fudge the [base_url] bit
-		var o = Config.urls[ i ];
-		o.url = o.url.replace( /^\[base_url\]/, Config.base_url );
-		
-		// Measure it
-		logger.debug( "[MAIN LOOP] Adding " + o.url + " to be measured " );
-		metrics[i] = new PageMetrics( o );	
+	// Fudge the [base_url] bit
+	var o = Config.urls[ i ];
+	o.url = o.url.replace( /^\[base_url\]/, Config.base_url );
+
+	// Measure it
+	logger.debug( "[MAIN LOOP] Adding " + o.url + " to be measured " );
+
+	// Take multiple measurements
+	for ( j = 0 ; j < Config.measurements ; j++ ) {
+		metrics.push( new PageMetrics( o ) );
+	}
 }
 
 // Measure them one-by-one
